@@ -1,0 +1,29 @@
+{
+  "name": "slack-barking-dog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "deploy": "node node_modules/pm2/bin/pm2 start src/app.js --name barking-dog",
+    "stop": "node node_modules/pm2/bin/pm2 stop barking-dog",
+    "restart": "node node_modules/pm2/bin/pm2 restart barking-dog",
+    "logs": "node node_modules/pm2/bin/pm2 logs barking-dog",
+    "save": "node node_modules/pm2/bin/pm2 save",
+    "startup": "node node_modules/pm2/bin/pm2 startup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@slack/bolt": "^4.6.0",
+    "date-holidays": "^3.26.5",
+    "dotenv": "^17.2.3",
+    "node-schedule": "^2.1.1"
+  },
+  "devDependencies": {
+    "pm2": "^6.0.13"
+  }
+}
