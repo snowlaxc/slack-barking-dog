@@ -28,6 +28,10 @@
    - Command: `/bark-setup`
    - Short Description: 짖는 시간 설정하기
    - Save 클릭.
+   - 다시 **Create New Command** 클릭.
+   - Command: `/bark-stop`
+   - Short Description: 알림 중지 및 데이터 삭제
+   - Save 클릭.
 7. **Event Subscriptions** 메뉴 클릭 (선택 사항):
    - **Enable Events** 활성화.
    - **Subscribe to bot events**에서 `message.im` 추가.
@@ -100,6 +104,8 @@ npm run deploy
 
 슬랙에서 봇이 있는 채널이나 DM으로 이동하세요.
 
+### 알림 설정하기
+
 1. **설정하기**:
    - 채팅창에 `/bark-setup` 입력 후 엔터.
    - 또는 봇에게 DM으로 "설정"이라고 메시지 전송.
@@ -110,3 +116,14 @@ npm run deploy
 3. **완료**:
    - 설정이 저장되면 봇이 확인 메시지를 보냅니다.
    - 이제 설정된 시간에 맞춰 봇이 짖어줍니다! 🐶
+
+### 알림 중지하기
+
+1. **중지하기**:
+   - 채팅창에 `/bark-stop` 입력 후 엔터.
+2. **확인 모달**:
+   - 삭제되는 내용을 확인하고 "중지하기" 버튼 클릭.
+   - ⚠️ **주의**: 이 작업은 취소할 수 없습니다.
+3. **완료**:
+   - 모든 설정과 봇이 보낸 메시지가 삭제됩니다.
+   - 더 이상 알림을 받지 않습니다.
