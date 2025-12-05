@@ -24,7 +24,7 @@ function scheduleJobForUser(app, userId, config) {
   rule.dayOfWeek = days; // Array of numbers 0-6
   rule.tz = 'Asia/Seoul'; // Explicitly set timezone if needed, or rely on system time
 
-  const job = schedule.scheduleJob(rule, async function() {
+  const job = schedule.scheduleJob(rule, async function () {
     try {
       // Check for holidays if skipHolidays is enabled
       if (config.skipHolidays) {
@@ -59,7 +59,18 @@ function initScheduler(app) {
   }
 }
 
+function cancelJobForUser(userId) {
+  if (jobs[userId]) {
+    jobs[userId].cancel();
+    delete jobs[userId];
+    console.log(`Cancelled bark schedule for user ${userId}`);
+    return true;
+  }
+  return false;
+}
+
 module.exports = {
   initScheduler,
-  scheduleJobForUser
+  scheduleJobForUser,
+  cancelJobForUser
 };
