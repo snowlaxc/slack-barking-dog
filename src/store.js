@@ -49,8 +49,23 @@ function getAllConfigs() {
   return data.users;
 }
 
+/**
+ * Delete user config
+ * @param {string} userId 
+ */
+function deleteUserConfig(userId) {
+  const data = loadData();
+  if (data.users[userId]) {
+    delete data.users[userId];
+    saveData(data);
+    return true;
+  }
+  return false;
+}
+
 module.exports = {
   setUserConfig,
   getUserConfig,
-  getAllConfigs
+  getAllConfigs,
+  deleteUserConfig
 };
